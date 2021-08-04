@@ -2,7 +2,7 @@
 #define WATCHY_FOOFINGERS_H
 
 #include <Watchy.h>
-#include "fonts/MotorolaScreentype10pt7b.h"
+#include "fonts/MotorolaScreentype8pt7b.h"
 #include "fonts/MADESunflower_trim38pt7b.h"
 
 

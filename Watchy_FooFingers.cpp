@@ -71,9 +71,9 @@ void WatchyFooFingers::drawDate(){
     }
     
     display.setTextColor(GxEPD_WHITE);
-    display.setFont(&MotorolaScreentype10pt7b);
+    display.setFont(&MotorolaScreentype8pt7b);
     display.setTextWrap(false);
-    display.setCursor(5,20);
+    display.setCursor(5,22);
     display.print(s_currentDate);
 }
 
@@ -83,22 +83,22 @@ void WatchyFooFingers::drawBattery(){
     float VBAT = getBatteryVoltage();
     if(VBAT > 4.1){
         batteryLevel = 4;
-        display.drawBitmap(167, 5, foofingers_img_bat100, 28, 13, GxEPD_WHITE);
+        display.drawBitmap(167, 7, foofingers_img_bat100, 28, 13, GxEPD_WHITE);
     }
     else if(VBAT > 3.95 && VBAT <= 4.1){
         batteryLevel = 3;
-        display.drawBitmap(167, 5, foofingers_img_bat75, 28, 13, GxEPD_WHITE);
+        display.drawBitmap(167, 7, foofingers_img_bat75, 28, 13, GxEPD_WHITE);
     }
     else if(VBAT > 3.88 && VBAT <= 3.95){
         batteryLevel = 2;
-        display.drawBitmap(167, 5, foofingers_img_bat50, 28, 13, GxEPD_WHITE);
+        display.drawBitmap(167, 7, foofingers_img_bat50, 28, 13, GxEPD_WHITE);
     } 
     else if(VBAT > 3.80 && VBAT <= 3.95){
         batteryLevel = 1;
-        display.drawBitmap(167, 5, foofingers_img_bat25, 28, 13, GxEPD_WHITE);
+        display.drawBitmap(167, 7, foofingers_img_bat25, 28, 13, GxEPD_WHITE);
     }    
     else if(VBAT <= 3.80){
         batteryLevel = 0;
-        display.drawBitmap(167, 5, foofingers_img_bat0, 28, 13, GxEPD_WHITE);
+        display.drawBitmap(167, 7, foofingers_img_bat0, 28, 13, GxEPD_WHITE);
     }
 }
