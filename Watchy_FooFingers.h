@@ -2,6 +2,7 @@
 #define WATCHY_FOOFINGERS_H
 
 #include <Watchy.h>
+
 #include "fonts/MotorolaScreentype8pt7b.h"
 #include "fonts/Bebas_Regular60pt7b.h"
 #include "fonts/Bebas_Regular30pt7b.h"
@@ -14,6 +15,7 @@ class WatchyFooFingers : public Watchy{
         void drawDate();
         void drawBattery();
         void drawWeather();
+        void drawSteps();
 };
 
 #endif

@@ -63,6 +63,7 @@ void WatchyFooFingers::drawWatchFace(){
     this->drawDate();
     this->drawBattery();
     this->drawWeather();
+    this->drawSteps();
 }
 
 void WatchyFooFingers::drawDate(){
@@ -140,6 +141,20 @@ void WatchyFooFingers::drawWeather(){
     //display.setFont(&DSEG7_Classic_Regular_39);
     int16_t  x1, y1;
     uint16_t w, h;
+
+    String tempText = "";
+    tempText.concat(temperature);
+    if(strcmp(TEMP_UNIT, "metric") == 0){
+      tempText.concat("°C");
+    }else{
+      tempText.concat("°F");
+    }
+    display.setTextColor(GxEPD_WHITE);
+    display.setFont(&MotorolaScreentype8pt7b);
+    display.setTextWrap(false);
+    display.setCursor(170, 168);
+    display.println(tempText);
+    
     //display.getTextBounds(String(temperature), 100, 150, &x1, &y1, &w, &h);
     //display.setCursor(155 - w, 150);
     //display.println(temperature);
@@ -165,5 +180,28 @@ void WatchyFooFingers::drawWeather(){
     weatherIcon = foofingers_img_thunderstorm; 
     }else
     return;
-    display.drawBitmap(128, 110, weatherIcon, 48, 48, GxEPD_WHITE);
+    display.drawBitmap(128, 107, weatherIcon, 48, 48, GxEPD_WHITE);
+}
+
+void WatchyFooFingers::drawSteps(){
+    uint32_t stepCount = sensor.getCounter();
+
+    const unsigned char* stepIcon;
+
+    if(stepCount > 0 && stepCount <= 2999){
+        stepIcon = foofingers_img_step_goal_1;
+    }
+    else if(stepCount > 3000 && stepCount <= 6000){
+        stepIcon = foofingers_img_step_goal_2;
+    }
+    else if(stepCount > 6001){
+        stepIcon = foofingers_img_step_goal_3;
+    }
+    
+    display.drawBitmap(20, 168, stepIcon, 30, 13, GxEPD_WHITE);
+    display.setTextColor(GxEPD_WHITE);
+    display.setFont(&MotorolaScreentype8pt7b);
+    display.setTextWrap(false);
+    display.setCursor(65, 168);
+    display.println(stepCount);
 }
