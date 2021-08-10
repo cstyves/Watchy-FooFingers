@@ -3,7 +3,8 @@
 
 #include <Watchy.h>
 #include "fonts/MotorolaScreentype8pt7b.h"
-#include "fonts/MADESunflower_trim38pt7b.h"
+#include "fonts/Bebas_Regular60pt7b.h"
+#include "fonts/Bebas_Regular30pt7b.h"
 
 
 class WatchyFooFingers : public Watchy{
@@ -12,6 +13,7 @@ class WatchyFooFingers : public Watchy{
         void drawWatchFace();
         void drawDate();
         void drawBattery();
+        void drawWeather();
 };
 
 #endif
