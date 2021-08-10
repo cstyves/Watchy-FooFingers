@@ -3,7 +3,7 @@
 
 #include <Watchy.h>
 
-#include "fonts/MotorolaScreentype8pt7b.h"
+#include "fonts/MotorolaScreenType_w_degree8pt7b.h"
 #include "fonts/Bebas_Regular60pt7b.h"
 #include "fonts/Bebas_Regular30pt7b.h"
 

@@ -5,7 +5,7 @@ WatchyFooFingers::WatchyFooFingers(){} //constructor
 
 void WatchyFooFingers::drawWatchFace(){
     display.fillScreen(GxEPD_BLACK);
-    display.drawBitmap(0, 0, foofingers_img_bg, DISPLAY_WIDTH, DISPLAY_HEIGHT, GxEPD_BLACK);
+    //display.drawBitmap(0, 0, foofingers_img_bg, DISPLAY_WIDTH, DISPLAY_HEIGHT, GxEPD_BLACK);
   
     int x = 100;
     int y = 125;
@@ -55,7 +55,7 @@ void WatchyFooFingers::drawWatchFace(){
     display.setTextColor(GxEPD_WHITE);
     display.setFont(&Bebas_Regular30pt7b);
     display.getTextBounds(s_currentHour, 130, 75, &x1, &y1, &w, &h);
-    display.setCursor(130, 105);
+    display.setCursor(130, 102);
     display.print(s_currentMin);
 
     /* Other functions */
@@ -99,7 +99,7 @@ void WatchyFooFingers::drawDate(){
     }
     
     display.setTextColor(GxEPD_WHITE);
-    display.setFont(&MotorolaScreentype8pt7b);
+    display.setFont(&MotorolaScreenType_w_degree8pt7b);
     display.setTextWrap(false);
     display.setCursor(5,22);
     display.print(s_currentDate);
@@ -150,9 +150,9 @@ void WatchyFooFingers::drawWeather(){
       tempText.concat("°F");
     }
     display.setTextColor(GxEPD_WHITE);
-    display.setFont(&MotorolaScreentype8pt7b);
+    display.setFont(&MotorolaScreenType_w_degree8pt7b);
     display.setTextWrap(false);
-    display.setCursor(170, 168);
+    display.setCursor(170, 190);
     display.println(tempText);
     
     //display.getTextBounds(String(temperature), 100, 150, &x1, &y1, &w, &h);
@@ -180,7 +180,7 @@ void WatchyFooFingers::drawWeather(){
     weatherIcon = foofingers_img_thunderstorm; 
     }else
     return;
-    display.drawBitmap(128, 107, weatherIcon, 48, 48, GxEPD_WHITE);
+    display.drawBitmap(128, 110, weatherIcon, 48, 48, GxEPD_WHITE);
 }
 
 void WatchyFooFingers::drawSteps(){
@@ -188,20 +188,20 @@ void WatchyFooFingers::drawSteps(){
 
     const unsigned char* stepIcon;
 
-    if(stepCount > 0 && stepCount <= 2999){
+    if(stepCount > 0 && stepCount <= 3999){
         stepIcon = foofingers_img_step_goal_1;
     }
-    else if(stepCount > 3000 && stepCount <= 6000){
+    else if(stepCount > 4000 && stepCount <= 8000){
         stepIcon = foofingers_img_step_goal_2;
     }
-    else if(stepCount > 6001){
+    else if(stepCount > 8001){
         stepIcon = foofingers_img_step_goal_3;
     }
     
-    display.drawBitmap(20, 168, stepIcon, 30, 13, GxEPD_WHITE);
+    display.drawBitmap(10, 168, stepIcon, 38, 23, GxEPD_WHITE);
     display.setTextColor(GxEPD_WHITE);
-    display.setFont(&MotorolaScreentype8pt7b);
+    display.setFont(&MotorolaScreenType_w_degree8pt7b);
     display.setTextWrap(false);
-    display.setCursor(65, 168);
+    display.setCursor(55, 190);
     display.println(stepCount);
 }

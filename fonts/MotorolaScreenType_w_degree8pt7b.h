@@ -1,4 +1,4 @@
-const uint8_t MotorolaScreentype8pt7bBitmaps[] PROGMEM = {
+const uint8_t MotorolaScreenType_w_degree8pt7bBitmaps[] PROGMEM = {
   0x00, 0xFF, 0xFF, 0xFF, 0x3C, 0xFF, 0xF0, 0x55, 0xFF, 0x55, 0x5F, 0xF5,
   0x50, 0x30, 0xC7, 0xBF, 0xCF, 0x8F, 0x9F, 0x1F, 0x3F, 0xDE, 0x30, 0xC0,
   0x76, 0x6F, 0x37, 0x8F, 0xC0, 0xC0, 0x60, 0x30, 0x38, 0x1C, 0x0C, 0x06,
@@ -72,7 +72,7 @@ const uint8_t MotorolaScreentype8pt7bBitmaps[] PROGMEM = {
   0xCE, 0x66, 0x66, 0x67, 0x30, 0x00, 0xCE, 0x66, 0x66, 0x67, 0x37, 0x66,
   0x66, 0x6E, 0xC0, 0x76, 0xE0 };
 
-const GFXglyph MotorolaScreentype8pt7bGlyphs[] PROGMEM = {
+const GFXglyph MotorolaScreenType_w_degree8pt7bGlyphs[] PROGMEM = {
   {     0,   1,   1,   4,    0,    0 },   // 0x20 ' '
   {     1,   2,  15,   3,    0,  -14 },   // 0x21 '!'
   {     5,   4,   3,   5,    0,  -15 },   // 0x22 '"'
@@ -169,9 +169,9 @@ const GFXglyph MotorolaScreentype8pt7bGlyphs[] PROGMEM = {
   {   846,   4,  17,   5,    0,  -14 },   // 0x7D '}'
   {   855,   6,   2,   7,    0,   -6 } }; // 0x7E '~'
 
-const GFXfont MotorolaScreentype8pt7b PROGMEM = {
-  (uint8_t  *)MotorolaScreentype8pt7bBitmaps,
-  (GFXglyph *)MotorolaScreentype8pt7bGlyphs,
+const GFXfont MotorolaScreenType_w_degree8pt7b PROGMEM = {
+  (uint8_t  *)MotorolaScreenType_w_degree8pt7bBitmaps,
+  (GFXglyph *)MotorolaScreenType_w_degree8pt7bGlyphs,
   0x20, 0x7E, 18 };
 
 // Approx. 1529 bytes
