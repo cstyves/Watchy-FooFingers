@@ -46,16 +46,16 @@ void WatchyFooFingers::drawWatchFace(){
 
     display.setTextColor(GxEPD_WHITE);
     display.setFont(&Bebas_Regular60pt7b);
-    display.getTextBounds(s_currentHour, 25, 70, &x1, &y1, &w, &h);
-    display.setCursor(25, 130);
+    display.getTextBounds(s_currentHour, 20, 95, &x1, &y1, &w, &h);
+    display.setCursor(20, 145);
     display.print(s_currentHour);
 
-    display.drawBitmap(25, 40, foofingers_img_alpha_90_80, 90, 80, GxEPD_BLACK);
+    display.drawBitmap(20, 55, foofingers_img_alpha_90_80, 90, 80, GxEPD_BLACK);
     
     display.setTextColor(GxEPD_WHITE);
     display.setFont(&Bebas_Regular30pt7b);
-    display.getTextBounds(s_currentHour, 120, 60, &x1, &y1, &w, &h);
-    display.setCursor(120, 90);
+    display.getTextBounds(s_currentHour, 130, 75, &x1, &y1, &w, &h);
+    display.setCursor(130, 105);
     display.print(s_currentMin);
 
     /* Other functions */
@@ -165,5 +165,5 @@ void WatchyFooFingers::drawWeather(){
     weatherIcon = foofingers_img_thunderstorm; 
     }else
     return;
-    display.drawBitmap(125, 100, weatherIcon, 48, 48, GxEPD_WHITE);
+    display.drawBitmap(128, 110, weatherIcon, 48, 48, GxEPD_WHITE);
 }
